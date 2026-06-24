@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen LIFE · Philippines Opportunities</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: #f5f9ff;
+      color: #0b2a4f;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: white;
+      background: #1b4a7a;
+      box-shadow: 0 4px 10px rgba(27, 74, 122, 0.2);
+    }
+    .btn:hover {
+      transform: scale(1.02);
+      background: #0f3a62;
+      box-shadow: 0 6px 16px rgba(27, 74, 122, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #1b4a7a;
+      border: 1.5px solid #b9cfe0;
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: #eaf1fa;
+      border-color: #1b4a7a;
+    }
+    .btn-sm {
+      padding: 0.3rem 1.2rem;
+      font-size: 0.8rem;
+    }
+
+    .main-header {
+      background: linear-gradient(135deg, #0b2a4f 0%, #1b4a7a 100%);
+      color: white;
+      padding: 1.2rem 0;
+      border-radius: 0 0 2rem 2rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 40, 0.2);
+      margin-bottom: 2rem;
+    }
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .logo-area i {
+      font-size: 2.2rem;
+      color: #fcd34d;
+    }
+    .logo-area h1 {
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+    }
+    .logo-area span {
+      font-weight: 300;
+      font-size: 0.8rem;
+      display: block;
+      color: #bbd9f0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.5rem 1.2rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #e5eff9;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+      border-radius: 40px;
+      transition: 0.15s;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-links a i {
+      font-size: 0.85rem;
+    }
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    .nav-links a.active {
+      background: rgba(255,255,255,0.18);
+      color: white;
+    }
+
+    /* FRONT PAGE */
+    .hero {
+      background: linear-gradient(145deg, #e4edf8, #d4e2f2);
+      border-radius: 3rem;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "🇵🇭🌏✨";
+      font-size: 7rem;
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      opacity: 0.08;
+      pointer-events: none;
+      transform: rotate(-5deg);
+    }
+    .hero-text {
+      flex: 2 1 280px;
+      z-index: 2;
+    }
+    .hero-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0a2647;
+      letter-spacing: -0.5px;
+    }
+    .hero-text h2 i {
+      color: #f59e0b;
+      margin-right: 8px;
+    }
+    .hero-text .special-message {
+      font-size: 1.1rem;
+      background: rgba(255,255,240,0.7);
+      backdrop-filter: blur(2px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin: 0.8rem 0 1rem;
+      border: 1px solid rgba(255,215,100,0.5);
+      font-weight: 500;
+      color: #1e3a5f;
+    }
+    .hero-text .special-message i {
+      color: #b45309;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #1e3a5f;
+      opacity: 0.9;
+    }
+    .hero-illustration {
+      flex: 1 1 200px;
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+    .hero-illustration i {
+      font-size: 3.5rem;
+      background: rgba(255,255,255,0.5);
+      padding: 0.6rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      color: #1b4a7a;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0 2rem;
+    }
+    .choice-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 1.8rem 0.8rem;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e6eef8;
+      transition: 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+      color: #0b2a4f;
+    }
+    .choice-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px -8px rgba(27, 74, 122, 0.15);
+      border-color: #b8d0e8;
+    }
+    .choice-card i {
+      font-size: 2.8rem;
+      color: #1b4a7a;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .choice-card .label {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .choice-card .sub {
+      font-size: 0.75rem;
+      color: #5b7c9c;
+      margin-top: 4px;
+    }
+
+    /* PAGE SECTIONS */
+    .page-section {
+      display: none;
+      animation: fadeUp 0.3s ease;
+    }
+    .page-section.active {
+      display: block;
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0.4; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* COMPACT FILTER BAR */
+    .filter-bar {
+      background: white;
+      border-radius: 2rem;
+      padding: 0.8rem 1.5rem;
+      margin: 1.5rem 0 2rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+      border: 1px solid #e2ecf5;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem 1rem;
+    }
+    .filter-group {
+      flex: 1 1 180px;
+      min-width: 130px;
+    }
+    .filter-group label {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #4d6e8e;
+      margin-bottom: 2px;
+    }
+    .filter-group input, 
+    .filter-group select {
+      width: 100%;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid #d5e0ec;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      background: #fafdff;
+      outline: none;
+    }
+    .filter-group input:focus,
+    .filter-group select:focus {
+      border-color: #1b4a7a;
+      box-shadow: 0 0 0 3px rgba(27,74,122,0.1);
+    }
+    .filter-group-sm {
+      flex: 0 1 100px;
+      min-width: 80px;
+    }
+    .filter-group-sm label {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #4d6e8e;
+      margin-bottom: 2px;
+    }
+    .filter-group-sm select {
+      width: 100%;
+      padding: 0.35rem 0.4rem;
+      border: 1px solid #d5e0ec;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      background: #fafdff;
+      outline: none;
+    }
+    .filter-group-sm select:focus {
+      border-color: #1b4a7a;
+      box-shadow: 0 0 0 3px rgba(27,74,122,0.1);
+    }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.8rem;
+      flex: 1 1 100%;
+    }
+    .filter-row .filter-group {
+      flex: 2 1 180px;
+    }
+    .filter-row .filter-group-sm {
+      flex: 0 1 100px;
+    }
+    .filter-actions {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .opp-card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.2rem 1.2rem 1.5rem;
+      border: 1px solid #eaf1f9;
+      transition: 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+      cursor: pointer;
+    }
+    .opp-card:hover {
+      border-color: #bccfe2;
+      box-shadow: 0 10px 24px -12px rgba(0, 20, 40, 0.15);
+      transform: translateY(-3px);
+    }
+    .opp-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+      color: #0a2647;
+    }
+    .opp-card .company {
+      font-size: 0.8rem;
+      color: #4f7193;
+      margin-bottom: 0.3rem;
+    }
+    .opp-card .meta {
+      font-size: 0.75rem;
+      color: #3f6282;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin: 0.4rem 0 0.6rem;
+    }
+    .opp-card .meta i {
+      width: 1.2rem;
+      color: #5f7f9e;
+    }
+    .opp-card .badge {
+      display: inline-block;
+      background: #dbeafe;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #1a4a7a;
+      margin-right: 4px;
+    }
+    .opp-card .badge.parttime { background: #e0f2e6; color: #0e5e3a; }
+    .opp-card .badge.contest { background: #fef3d7; color: #8a6100; }
+    .opp-card .badge.scholar { background: #e8e0f5; color: #4c2f7a; }
+
+    .no-result {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 2.5rem;
+      background: #fafdff;
+      border-radius: 2rem;
+      color: #4b6f8f;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-box {
+      background: white;
+      max-width: 520px;
+      width: 90%;
+      border-radius: 2.5rem;
+      padding: 2rem 2rem 2.2rem;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalIn 0.25s ease;
+    }
+    @keyframes modalIn {
+      0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    .modal-box .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #6b8aa8;
+      transition: 0.15s;
+      background: none;
+      border: none;
+    }
+    .modal-box .close-modal:hover {
+      color: #1b4a7a;
+      transform: rotate(90deg);
+    }
+    .modal-box h3 {
+      font-size: 1.7rem;
+      margin-bottom: 0.25rem;
+      color: #0a2647;
+    }
+    .modal-box .modal-sub {
+      color: #4f7193;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid #eaf1f9;
+      padding-bottom: 0.8rem;
+    }
+    .modal-box .detail-row {
+      display: flex;
+      padding: 0.4rem 0;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #f0f5fc;
+    }
+    .modal-box .detail-row .label {
+      font-weight: 600;
+      width: 100px;
+      color: #1e3a5f;
+    }
+    .modal-box .detail-row .value {
+      color: #1e3a5f;
+    }
+    .modal-box .detail-row .value i {
+      margin-right: 6px;
+      color: #5f7f9e;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid #dde6f0;
+      text-align: center;
+      color: #4c6d8a;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 680px) {
+      .hero { flex-direction: column; text-align: center; }
+      .hero-illustration { justify-content: center; }
+      .filter-bar { flex-direction: column; align-items: stretch; }
+      .filter-actions { margin-left: 0; justify-content: stretch; }
+      .header-flex { flex-direction: column; align-items: flex-start; }
+      .modal-box { padding: 1.5rem; }
+      .filter-row { flex-direction: column; align-items: stretch; }
+      .filter-row .filter-group-sm { flex: 1 1 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="container header-flex">
+    <div class="logo-area">
+      <i class="fas fa-seedling"></i>
+      <div>
+        <h1>Teen LIFE</h1>
+        <span>🇵🇭 opportunities for Filipino teens</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active" data-page="front"><i class="fas fa-home"></i> Home</a>
+      <a href="#" data-page="scholarships"><i class="fas fa-graduation-cap"></i> Scholarships</a>
+      <a href="#" data-page="contests"><i class="fas fa-trophy"></i> Contests</a>
+      <a href="#" data-page="parttime"><i class="fas fa-briefcase"></i> Part-time</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- FRONT PAGE -->
+  <div id="page-front" class="page-section active">
+    <section class="hero">
+      <div class="hero-text">
+        <h2><i class="fas fa-star"></i> Your future starts here</h2>
+        <div class="special-message">
+          <i class="fas fa-heart" style="color: #b22234;"></i> 
+          “Education and opportunity are keys to a brighter tomorrow.”
+        </div>
+        <p><i class="fas fa-arrow-right" style="color: #f59e0b;"></i> Scholarships · Contests · Internships · Part-time jobs</p>
+      </div>
+      <div class="hero-illustration">
+        <i class="fas fa-user-graduate"></i>
+        <i class="fas fa-laptop-code"></i>
+        <i class="fas fa-palette"></i>
+        <i class="fas fa-microphone"></i>
+        <i class="fas fa-bullhorn"></i>
+      </div>
+    </section>
+
+    <div class="choice-grid">
+      <a href="#" class="choice-card" data-page="scholarships">
+        <i class="fas fa-graduation-cap"></i>
+        <div class="label">Scholarships</div>
+        <div class="sub">fund your studies</div>
+      </a>
+      <a href="#" class="choice-card" data-page="contests">
+        <i class="fas fa-trophy"></i>
+        <div class="label">Contests</div>
+        <div class="sub">show your talent</div>
+      </a>
+      <a href="#" class="choice-card" data-page="internships">
+        <i class="fas fa-briefcase"></i>
+        <div class="label">Internships</div>
+        <div class="sub">gain experience</div>
+      </a>
+      <a href="#" class="choice-card" data-page="parttime">
+        <i class="fas fa-clock"></i>
+        <div class="label">Part-time</div>
+        <div class="sub">earn while you learn</div>
+      </a>
+    </div>
+
+    <div style="background: #e4edf8; border-radius: 2rem; padding: 1.2rem 1.8rem; margin: 1.2rem 0; text-align: center; font-weight: 500;">
+      <i class="fas fa-users" style="color: #1b4a7a;"></i> 
+      Thousands of Filipino teens have found their path — start yours now!
+    </div>
+  </div>
+
+  <!-- SCHOLARSHIPS -->
+  <div id="page-scholarships" class="page-section">
+    <h2 style="font-weight: 600; font-size: 1.9rem;"><i class="fas fa-graduation-cap" style="color: #1b4a7a;"></i> Scholarships</h2>
+    <div class="filter-bar">
+      <div class="filter-row">
+        <div class="filter-group">
+          <label><i class="fas fa-search"></i> Search company</label>
+          <input type="text" id="scholarSearch" placeholder="e.g. DOST, SM, Ayala..." />
+        </div>
+        <div class="filter-group-sm">
+          <label><i class="fas fa-graduation-cap"></i> Grade</label>
+          <select id="scholarGrade">
+            <option value="all">All</option>
+            <option value="middle">Middle</option>
+            <option value="high">High</option>
+            <option value="college">College</option>
+          </select>
+        </div>
+        <div class="filter-group-sm">
+          <label><i class="fas fa-cake-candles"></i> Age</label>
+          <select id="scholarAge">
+            <option value="all">All</option>
+            <option value="13-15">13–15</option>
+            <option value="16-18">16–18</option>
+            <option value="18+">18+</option>
+          </select>
+        </div>
+        <div class="filter-actions">
+          <button class="btn btn-sm" id="applyScholar"><i class="fas fa-sliders-h"></i> Apply</button>
+          <button class="btn btn-sm btn-outline" id="resetScholar"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-grid" id="scholarGrid"></div>
+  </div>
+
+  <!-- CONTESTS -->
+  <div id="page-contests" class="page-section">
+    <h2 style="font-weight: 600; font-size: 1.9rem;"><i class="fas fa-trophy" style="color: #f59e0b;"></i> Contests</h2>
+    <div class="filter-bar">
+      <div class="filter-row">
+        <div class="filter-group">
+          <label><i class="fas fa-search"></i> Search event</label>
+          <input type="text" id="contestSearch" placeholder="e.g. debate, hackathon, arnis..." />
+        </div>
+        <div class="filter-group-sm">
+          <label><i class="fas fa-graduation-cap"></i> Grade</label>
+          <select id="contestGrade">
+            <option value="all">All</option>
+            <option value="middle">Middle</option>
+            <option value="high">High</option>
+            <option value="college">College</option>
+          </select>
+        </div>
+        <div class="filter-group-sm">
+          <label><i class="fas fa-cake-candles"></i> Age</label>
+          <select id="contestAge">
+            <option value="all">All</option>
+            <option value="13-15">13–15</option>
+            <option value="16-18">16–18</option>
+            <option value="18+">18+</option>
+          </select>
+        </div>
+        <div class="filter-actions">
+          <button class="btn btn-sm" id="applyContest"><i class="fas fa-sliders-h"></i> Apply</button>
+          <button class="btn btn-sm btn-outline" id="resetContest"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-grid" id="contestGrid"></div>
+  </div>
+
+  <!-- PART-TIME -->
+  <div id="page-parttime" class="page-section">
+    <h2 style="font-weight: 600; font-size: 1.9rem;"><i class="fas fa-clock" style="color: #0e6b3a;"></i> Part-time Jobs</h2>
+    <div class="filter-bar">
+      <div class="filter-row">
+        <div class="filter-group">
+          <label><i class="fas fa-search"></i> Search company</label>
+          <input type="text" id="partSearch" placeholder="e.g. Jollibee, BPO..." />
+        </div>
+        <div class="filter-group-sm">
+          <label><i class="fas fa-graduation-cap"></i> Grade</label>
+          <select id="partGrade">
+            <option value="all">All</option>
+            <option value="middle">Middle</option>
+            <option value="high">High</option>
+            <option value="college">College</option>
+          </select>
+        </div>
+        <div class="filter-group-sm">
+          <label><i class="fas fa-cake-candles"></i> Age</label>
+          <select id="partAge">
+            <option value="all">All</option>
+            <option value="13-15">13–15</option>
+            <option value="16-18">16–18</option>
+            <option value="18+">18+</option>
+          </select>
+        </div>
+        <div class="filter-group-sm" style="flex:0 1 120px; min-width:90px;">
+          <label><i class="fas fa-briefcase"></i> Position</label>
+          <input type="text" id="partPosition" placeholder="e.g. crew, tutor..." style="width:100%;padding:0.35rem 0.5rem;border:1px solid #d5e0ec;border-radius:40px;font-size:0.8rem;background:#fafdff;outline:none;" />
+        </div>
+        <div class="filter-actions">
+          <button class="btn btn-sm" id="applyPart"><i class="fas fa-sliders-h"></i> Apply</button>
+          <button class="btn btn-sm btn-outline" id="resetPart"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-grid" id="partGrid"></div>
+  </div>
+
+  <!-- INTERNSHIPS (dummy) -->
+  <div id="page-internships" class="page-section">
+    <h2 style="font-weight: 600; font-size: 1.9rem;"><i class="fas fa-briefcase" style="color: #0b4f6c;"></i> Internships</h2>
+    <div style="background: #eef6fc; border-radius: 2rem; padding: 2.5rem; text-align: center; margin: 2rem 0;">
+      <i class="fas fa-construction" style="font-size: 2.5rem; color: #3d6b8f;"></i>
+      <p style="font-size: 1.2rem; margin: 1rem 0;">Internship opportunities coming soon!</p>
+      <p>Check back later or explore other pages.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <i class="fas fa-heart" style="color: #b22234;"></i> Teen LIFE — discover, grow, succeed. 🇵🇭
+  </footer>
+</main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="detailModal">
+  <div class="modal-box">
+    <button class="close-modal" id="closeModal">&times;</button>
+    <h3 id="modalTitle">Title</h3>
+    <div class="modal-sub" id="modalSub">Organization / Event</div>
+    <div id="modalDetails"></div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ----- ALL DATA EMBEDDED — 10 items each, works offline -----
+    var scholarships = [
+      { title: "DOST-SEI Undergraduate Scholarship", company: "DOST", age: "18+", grade: "college", amount: "₱40,000/year", location: "Nationwide", requirement: "STEM course, 85% GWA" },
+      { title: "SM Foundation College Scholarship", company: "SM", age: "18+", grade: "college", amount: "₱20,000/sem", location: "Nationwide", requirement: "Financial need, good grades" },
+      { title: "Ayala Young Leaders Scholarship", company: "Ayala", age: "16-18", grade: "high", amount: "₱30,000/year", location: "Metro Manila", requirement: "Leadership & community service" },
+      { title: "PLDT-Smart Scholarship", company: "PLDT", age: "18+", grade: "college", amount: "₱25,000/year", location: "Nationwide", requirement: "ICT course, 80% GWA" },
+      { title: "BDO Foundation Scholarship", company: "BDO", age: "16-18", grade: "high", amount: "₱15,000/year", location: "Nationwide", requirement: "Financial need, academic excellence" },
+      { title: "Shell National Scholarship", company: "Shell", age: "18+", grade: "college", amount: "₱35,000/year", location: "Nationwide", requirement: "Engineering, 88% GWA" },
+      { title: "Globe Telecom Scholarship", company: "Globe", age: "16-18", grade: "high", amount: "₱20,000/year", location: "Nationwide", requirement: "ICT course, 85% GWA" },
+      { title: "San Miguel Corporation Scholarship", company: "San Miguel", age: "18+", grade: "college", amount: "₱30,000/year", location: "Nationwide", requirement: "Business/Engineering, 82% GWA" },
+      { title: "Meralco Foundation Scholarship", company: "Meralco", age: "16-18", grade: "high", amount: "₱18,000/year", location: "Metro Manila", requirement: "Financial need, good grades" },
+      { title: "Philippine Women's University Grant", company: "PWU", age: "18+", grade: "college", amount: "₱22,000/year", location: "Manila", requirement: "Female student, 80% GWA" }
+    ];
+
+    var contests = [
+      { title: "National Arnis Championship 2026", event: "Arnis", age: "16-18", grade: "high", prize: "₱100,000 + Trophy", location: "Manila", requirement: "Must have basic Arnis training, bring own weapon" },
+      { title: "National Debate Championship PH", event: "Debate", age: "16-18", grade: "high", prize: "₱50,000", location: "Quezon City", requirement: "Team of 2, qualifying rounds" },
+      { title: "Hack for Health PH", event: "Hackathon", age: "18+", grade: "college", prize: "₱30,000", location: "Makati", requirement: "Build a health-tech prototype" },
+      { title: "Pintig Short Film Contest", event: "Film", age: "13-15", grade: "middle", prize: "₱20,000", location: "Online", requirement: "5-min short film about Filipino culture" },
+      { title: "Tula at Talino Poetry Slam", event: "Poetry", age: "16-18", grade: "high", prize: "₱10,000", location: "Manila", requirement: "Original spoken word poetry" },
+      { title: "RoboLeague Philippines", event: "Robotics", age: "13-15", grade: "middle", prize: "₱25,000", location: "Cebu", requirement: "Build a robot that solves a maze" },
+      { title: "Arnis Youth Exhibition Match", event: "Arnis", age: "13-15", grade: "middle", prize: "₱15,000 + Medals", location: "Cebu", requirement: "At least 1 year Arnis experience" },
+      { title: "Math Olympiad PH", event: "Math", age: "16-18", grade: "high", prize: "₱40,000", location: "Nationwide", requirement: "Qualifying exam, top 100" },
+      { title: "Science Investigatory Project", event: "Science", age: "13-15", grade: "middle", prize: "₱30,000", location: "Nationwide", requirement: "Original research project" },
+      { title: "Digital Art Competition", event: "Art", age: "16-18", grade: "high", prize: "₱15,000", location: "Online", requirement: "Digital artwork, theme: 'Future PH'" }
+    ];
+
+    var parttime = [
+      { title: "Crew Member", company: "Jollibee", age: "16-18", grade: "high", position: "Service Crew", salary: "₱100/hr", location: "Metro Manila", requirement: "Customer service, flexible hours" },
+      { title: "Retail Associate", company: "SM Retail", age: "18+", grade: "college", position: "Sales Associate", salary: "₱120/hr", location: "Nationwide", requirement: "Sales experience, weekends" },
+      { title: "Academic Tutor", company: "Kumon PH", age: "18+", grade: "college", position: "Tutor", salary: "₱150/hr", location: "Various", requirement: "Math/English proficiency" },
+      { title: "Call Center Agent", company: "Concentrix", age: "18+", grade: "college", position: "Customer Service", salary: "₱180/hr", location: "Metro Manila", requirement: "English communication, shifting" },
+      { title: "Barista", company: "Starbucks PH", age: "18+", grade: "college", position: "Barista", salary: "₱110/hr", location: "Nationwide", requirement: "Friendly, can work early mornings" },
+      { title: "Fast Food Server", company: "McDonald's", age: "16-18", grade: "high", position: "Service Crew", salary: "₱90/hr", location: "Nationwide", requirement: "Team player, weekends" },
+      { title: "Retail Staff", company: "Robinsons", age: "18+", grade: "college", position: "Sales Associate", salary: "₱115/hr", location: "Nationwide", requirement: "Retail experience" },
+      { title: "Online Tutor", company: "Edukasyon PH", age: "18+", grade: "college", position: "Online Tutor", salary: "₱160/hr", location: "Remote", requirement: "Teaching experience, laptop" },
+      { title: "Warehouse Helper", company: "Lazada PH", age: "18+", grade: "college", position: "Logistics", salary: "₱130/hr", location: "Metro Manila", requirement: "Can lift 20kg, shifting" },
+      { title: "Food Delivery Rider", company: "Grab PH", age: "18+", grade: "college", position: "Rider", salary: "₱150/hr", location: "Metro Manila", requirement: "Own motorcycle, valid license" }
+    ];
+
+    // ----- RENDER FUNCTIONS -----
+    function renderCards(gridId, data, type) {
+      var grid = document.getElementById(gridId);
+      if (!data || data.length === 0) {
+        grid.innerHTML = '<div class="no-result"><i class="fas fa-search"></i> No results found. Try a different keyword.</div>';
+        return;
+      }
+      var html = '';
+      for (var i = 0; i < data.length; i++) {
+        var item = data[i];
+        var badgeClass = '';
+        var badgeLabel = '';
+        if (type === 'scholar') { badgeClass = 'scholar'; badgeLabel = 'scholarship'; }
+        else if (type === 'contest') { badgeClass = 'contest'; badgeLabel = 'contest'; }
+        else if (type === 'parttime') { badgeClass = 'parttime'; badgeLabel = 'part-time'; }
+
+        var title = item.title || '';
+        var org = item.company || item.event || '';
+        var meta = [];
+        if (item.age) meta.push('<span><i class="fas fa-cake-candles"></i> ' + item.age + '</span>');
+        if (item.grade) meta.push('<span><i class="fas fa-graduation-cap"></i> ' + item.grade + '</span>');
+        if (item.amount) meta.push('<span><i class="fas fa-dollar-sign"></i> ' + item.amount + '</span>');
+        if (item.prize) meta.push('<span><i class="fas fa-award"></i> ' + item.prize + '</span>');
+        if (item.salary) meta.push('<span><i class="fas fa-money-bill-wave"></i> ' + item.salary + '</span>');
+        if (item.position) meta.push('<span><i class="fas fa-briefcase"></i> ' + item.position + '</span>');
+
+        html += '<div class="opp-card" data-index="' + i + '" data-type="' + type + '">';
+        html += '<h4>' + title + '</h4>';
+        html += '<div class="company"><i class="fas fa-building"></i> ' + org + '</div>';
+        html += '<div class="meta">' + meta.join('') + '</div>';
+        html += '<span class="badge ' + badgeClass + '">' + badgeLabel + '</span>';
+        html += '</div>';
+      }
+      grid.innerHTML = html;
+
+      // attach click listeners
+      var cards = grid.querySelectorAll('.opp-card');
+      for (var j = 0; j < cards.length; j++) {
+        (function(card) {
+          card.addEventListener('click', function() {
+            var idx = parseInt(this.dataset.index);
+            var type = this.dataset.type;
+            var item;
+            if (type === 'scholar') item = scholarships[idx];
+            else if (type === 'contest') item = contests[idx];
+            else if (type === 'parttime') item = parttime[idx];
+            if (item) showModal(item, type);
+          });
+        })(cards[j]);
+      }
+    }
+
+    // ----- MODAL -----
+    function showModal(item, type) {
+      var modal = document.getElementById('detailModal');
+      document.getElementById('modalTitle').textContent = item.title || 'Opportunity';
+      var sub = item.company || item.event || '';
+      document.getElementById('modalSub').textContent = sub;
+
+      var detailsHtml = '';
+      var fields = [];
+      if (type === 'scholar') {
+        fields.push({ label: 'Company', value: item.company });
+        fields.push({ label: 'Amount', value: item.amount });
+        fields.push({ label: 'Location', value: item.location || 'N/A' });
+        fields.push({ label: 'Requirement', value: item.requirement || 'N/A' });
+        fields.push({ label: 'Age range', value: item.age });
+        fields.push({ label: 'Grade level', value: item.grade });
+      } else if (type === 'contest') {
+        fields.push({ label: 'Event', value: item.event });
+        fields.push({ label: 'Prize', value: item.prize });
+        fields.push({ label: 'Location', value: item.location || 'N/A' });
+        fields.push({ label: 'Requirement', value: item.requirement || 'N/A' });
+        fields.push({ label: 'Age range', value: item.age });
+        fields.push({ label: 'Grade level', value: item.grade });
+      } else if (type === 'parttime') {
+        fields.push({ label: 'Company', value: item.company });
+        fields.push({ label: 'Position', value: item.position });
+        fields.push({ label: 'Salary', value: item.salary || 'N/A' });
+        fields.push({ label: 'Location', value: item.location || 'N/A' });
+        fields.push({ label: 'Requirement', value: item.requirement || 'N/A' });
+        fields.push({ label: 'Age range', value: item.age });
+        fields.push({ label: 'Grade level', value: item.grade });
+      }
+
+      for (var i = 0; i < fields.length; i++) {
+        var f = fields[i];
+        detailsHtml += '<div class="detail-row"><span class="label">' + f.label + '</span><span class="value">' + (f.value || '—') + '</span></div>';
+      }
+      document.getElementById('modalDetails').innerHTML = detailsHtml;
+      modal.classList.add('active');
+    }
+
+    // close modal
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('detailModal').classList.remove('active');
+    });
+    document.getElementById('detailModal').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('active');
+    });
+
+    // ----- FILTER FUNCTIONS -----
+    function filterScholar() {
+      var search = document.getElementById('scholarSearch').value.toLowerCase().trim();
+      var age = document.getElementById('scholarAge').value;
+      var grade = document.getElementById('scholarGrade').value;
+      var filtered = [];
+      for (var i = 0; i < scholarships.length; i++) {
+        var s = scholarships[i];
+        if (search && !s.company.toLowerCase().includes(search)) continue;
+        if (age !== 'all' && s.age !== age) continue;
+        if (grade !== 'all' && s.grade !== grade) continue;
+        filtered.push(s);
+      }
+      renderCards('scholarGrid', filtered, 'scholar');
+    }
+
+    function filterContest() {
+      var search = document.getElementById('contestSearch').value.toLowerCase().trim();
+      var age = document.getElementById('contestAge').value;
+      var grade = document.getElementById('contestGrade').value;
+      var filtered = [];
+      for (var i = 0; i < contests.length; i++) {
+        var c = contests[i];
+        if (search && !c.event.toLowerCase().includes(search)) continue;
+        if (age !== 'all' && c.age !== age) continue;
+        if (grade !== 'all' && c.grade !== grade) continue;
+        filtered.push(c);
+      }
+      renderCards('contestGrid', filtered, 'contest');
+    }
+
+    function filterPart() {
+      var search = document.getElementById('partSearch').value.toLowerCase().trim();
+      var age = document.getElementById('partAge').value;
+      var grade = document.getElementById('partGrade').value;
+      var position = document.getElementById('partPosition').value.toLowerCase().trim();
+      var filtered = [];
+      for (var i = 0; i < parttime.length; i++) {
+        var p = parttime[i];
+        if (search && !p.company.toLowerCase().includes(search)) continue;
+        if (age !== 'all' && p.age !== age) continue;
+        if (grade !== 'all' && p.grade !== grade) continue;
+        if (position && !p.position.toLowerCase().includes(position)) continue;
+        filtered.push(p);
+      }
+      renderCards('partGrid', filtered, 'parttime');
+    }
+
+    // ----- RESET -----
+    function resetScholar() {
+      document.getElementById('scholarSearch').value = '';
+      document.getElementById('scholarAge').value = 'all';
+      document.getElementById('scholarGrade').value = 'all';
+      filterScholar();
+    }
+    function resetContest() {
+      document.getElementById('contestSearch').value = '';
+      document.getElementById('contestAge').value = 'all';
+      document.getElementById('contestGrade').value = 'all';
+      filterContest();
+    }
+    function resetPart() {
+      document.getElementById('partSearch').value = '';
+      document.getElementById('partAge').value = 'all';
+      document.getElementById('partGrade').value = 'all';
+      document.getElementById('partPosition').value = '';
+      filterPart();
+    }
+
+    // ----- NAVIGATION -----
+    function navigateTo(pageId) {
+      var sections = document.querySelectorAll('.page-section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+      }
+      var target = document.getElementById('page-' + pageId);
+      if (target) target.classList.add('active');
+      
+      var links = document.querySelectorAll('.nav-links a');
+      for (var j = 0; j < links.length; j++) {
+        links[j].classList.remove('active');
+      }
+      var navLink = document.querySelector('.nav-links a[data-page="' + pageId + '"]');
+      if (navLink) navLink.classList.add('active');
+      
+      if (pageId === 'scholarships') filterScholar();
+      else if (pageId === 'contests') filterContest();
+      else if (pageId === 'parttime') filterPart();
+    }
+
+    // ----- EVENT BINDINGS -----
+    var navAndChoice = document.querySelectorAll('.nav-links a, .choice-card');
+    for (var k = 0; k < navAndChoice.length; k++) {
+      (function(el) {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          var page = this.dataset.page;
+          if (page) navigateTo(page);
+        });
+      })(navAndChoice[k]);
+    }
+
+    document.getElementById('applyScholar').addEventListener('click', filterScholar);
+    document.getElementById('resetScholar').addEventListener('click', resetScholar);
+    document.getElementById('applyContest').addEventListener('click', filterContest);
+    document.getElementById('resetContest').addEventListener('click', resetContest);
+    document.getElementById('applyPart').addEventListener('click', filterPart);
+    document.getElementById('resetPart').addEventListener('click', resetPart);
+
+    // initial render
+    renderCards('scholarGrid', scholarships, 'scholar');
+    renderCards('contestGrid', contests, 'contest');
+    renderCards('partGrid', parttime, 'parttime');
+  })();
+</script>
+
+</body>
+</html>
